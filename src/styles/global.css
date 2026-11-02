@@ -4,12 +4,17 @@
    PALETA DE LA INVITACIÓN  (usar como bg-vino, text-marron...)
    ═══════════════════════════════════════════════════════════ */
 @theme {
-  --color-vino: #8b6a33;
-  --color-marron: #5e4423;
+  --color-vino: #1f1a14;
+  --color-marron: #3b332a;
   --color-crema: #fbf6ea;
   --color-papel: #f7f0e1;
   --color-oro: #c7a467;
   --color-oro-claro: #e6cf9c;
+  /* Trazo dorado de arcos y franjas, tinta negra de los textos y un
+     dorado hondo para rótulos chicos (el #efbf04 no se lee como letra) */
+  --color-oro-vivo: #efbf04;
+  --color-tinta: #1f1a14;
+  --color-oro-hondo: #9a7000;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -29,7 +34,7 @@
 }
 
 .icono-marron {
-  background-color: #5e4423;
+  background-color: #3b332a;
 }
 
 .icono-crema {
@@ -81,9 +86,19 @@
   font-display: swap;
 }
 
-/* Para el nombre */
+/* Edwardian Script: la cursiva de los nombres y títulos. Se sirve desde
+   /fonts/ como las demás letras de los nombres */
+@font-face {
+  font-family: 'Edwardian Script ITC';
+  src: url('/fonts/Edwardian Script ITC Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Para el nombre (la clase conserva su nombre para no tocar los componentes) */
 .font-great-vibes {
-  font-family: 'Great Vibes', cursive !important;
+  font-family: 'Edwardian Script ITC', 'Great Vibes', cursive !important;
 }
 
 /* Para dedicatoria*/
@@ -126,30 +141,16 @@
 
 
 /* ═══════════════════════════════════════════════════════════
-   ARCOS ORO VIEJO (bg-vino): luz suave en la cúpula y filete crema por dentro
+   ARCOS: filete por dentro, sin relleno ni degradado
    Uso: <div class="arco-luz relative bg-vino rounded-t-full ...">
    El filete se puede "dibujar" animando --filete de 100% a 0%.
    ═══════════════════════════════════════════════════════════ */
-.arco-luz {
-  background-image: radial-gradient(
-    120% 60% at 30% 10%,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0) 55%
-  ),
-  /* Lámina dorada: luz champaña arriba, sombra bronce abajo */
-  linear-gradient(
-    160deg,
-    rgba(255, 236, 190, 0.22) 0%,
-    rgba(255, 236, 190, 0) 45%,
-    rgba(60, 38, 8, 0.18) 100%
-  );
-}
 
 .arco-luz::before {
   content: "";
   position: absolute;
   inset: 10px 10px 0;
-  border: 1px solid rgba(251, 246, 234, 0.35);
+  border: 1px solid rgba(255, 246, 214, 0.6);
   border-bottom: 0;
   border-radius: 9999px 9999px 0 0;
   pointer-events: none;
@@ -193,7 +194,7 @@
 .adorno-vino span {
   width: 48px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(139, 106, 51, 0.75));
+  background: linear-gradient(90deg, transparent, rgba(239, 191, 4, 0.9));
 }
 
 .adorno-vino span:last-child {
@@ -203,7 +204,7 @@
 .adorno-vino i {
   width: 5px;
   height: 5px;
-  background: #8b6a33;
+  background: var(--color-oro-vivo);
   transform: rotate(45deg);
 }
 
@@ -219,7 +220,7 @@
   left: 6%;
   right: 6%;
   height: 6px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='6'%3E%3Cpath d='M0 3 Q7 0.6 14 3 T28 3' fill='none' stroke='%23fbf6ea' stroke-opacity='0.55' stroke-width='0.9'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='6'%3E%3Cpath d='M0 3 Q7 0.6 14 3 T28 3' fill='none' stroke='%23efbf04' stroke-opacity='0.95' stroke-width='0.9'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: center;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 78%, transparent);
@@ -303,7 +304,7 @@
   content: "";
   position: absolute;
   inset: 5px 5px 0;
-  border: 1px solid rgba(243, 226, 184, 0.7);
+  border: 1px solid rgba(74, 52, 18, 0.35);
   border-bottom: 0;
   border-radius: 9999px 9999px 0 0;
   pointer-events: none;
@@ -321,7 +322,7 @@
 .adorno-oro span {
   width: 52px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #d9bd85);
+  background: linear-gradient(90deg, transparent, var(--color-oro-vivo));
 }
 
 .adorno-oro span:last-child {
@@ -331,7 +332,7 @@
 .adorno-oro i {
   width: 6px;
   height: 6px;
-  background: linear-gradient(135deg, #f0dcae, #b8925a);
+  background: var(--color-oro-vivo);
   transform: rotate(45deg);
 }
 
@@ -341,16 +342,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid rgba(243, 226, 184, 0.9);
+  border: 1.5px solid var(--color-oro-vivo);
   box-shadow:
-    0 0 0 4px var(--color-vino),
-    0 0 0 5px rgba(199, 164, 103, 0.45),
-    0 8px 18px rgba(60, 40, 15, 0.25);
-  background: radial-gradient(
-    circle at 35% 30%,
-    rgba(255, 255, 255, 0.14),
-    rgba(255, 255, 255, 0) 62%
-  );
+    0 0 0 4px transparent,
+    0 0 0 5px rgba(239, 191, 4, 0.55),
+    0 8px 18px rgba(60, 40, 15, 0.08);
+  background: transparent;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -370,7 +367,7 @@
   outline: 1px solid rgba(199, 164, 103, 0.4);
   outline-offset: 3px;
   border-radius: 999px;
-  color: #8b6a33;
+  color: var(--color-tinta);
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   font-size: 1.05rem;
@@ -387,7 +384,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: #8b6a33;
+  background: var(--color-tinta);
   transform: translateY(101%);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -442,4 +439,64 @@
     rgba(255, 255, 255, 0) 100%
   );
   transform: skewX(-14deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TRAZO DORADO: arcos (.superficie-oro) y franjas (.franja) sin
+   relleno, se ve el papel. Sólo el contorno en #efbf04 y los textos
+   en tinta negra.
+   ═══════════════════════════════════════════════════════════ */
+.superficie-oro {
+  background-color: transparent;
+  background-image: none;
+  border: 1.5px solid var(--color-oro-vivo);
+  box-shadow: none;
+}
+
+/* Filete interior, el que se dibuja subiendo al aparecer */
+.superficie-oro.arco-luz::before {
+  border-color: rgba(239, 191, 4, 0.55);
+}
+
+.superficie-oro.arco-oro::after {
+  display: none;
+}
+
+.franja-fondo {
+  border-top: 1.5px solid var(--color-oro-vivo);
+  border-bottom: 1.5px solid var(--color-oro-vivo);
+}
+
+/* Lo principal en dorado y lo secundario en negro: los títulos de las
+   bandas van en dorado, los textos dentro de los arcos en negro */
+.franja [class*="text-crema"] {
+  color: var(--color-oro-hondo);
+}
+.superficie-oro [class*="text-crema"] {
+  color: var(--color-tinta);
+}
+.superficie-oro .font-great-vibes {
+  color: var(--color-oro-hondo);
+}
+
+.superficie-oro .text-oro-claro {
+  color: var(--color-oro-hondo);
+}
+
+.superficie-oro .icono-crema {
+  background-color: var(--color-oro-hondo);
+}
+
+/* Monograma blanco: en negro sobre el papel */
+.superficie-oro .medallon img {
+  filter: brightness(0);
+  opacity: 0.85;
+}
+
+.franja .adorno-crema span {
+  background: linear-gradient(90deg, transparent, var(--color-oro-vivo));
+}
+
+.franja .adorno-crema i {
+  background: var(--color-oro-vivo);
 }

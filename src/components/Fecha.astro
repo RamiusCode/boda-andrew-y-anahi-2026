@@ -18,7 +18,7 @@ const datos = [
 ---
 
 <section id="franja-fecha" class="franja relative w-full py-8 px-7 overflow-hidden">
-    <div class="franja-fondo absolute inset-0 bg-vino">
+    <div class="franja-fondo absolute inset-0">
         <span class="franja-filete arriba"></span>
         <span class="franja-filete abajo"></span>
     </div>
@@ -46,13 +46,13 @@ const datos = [
                            centra contando ese hueco y las letras quedan
                            corridas a la izquierda.
                         */}
-                        <h3 class="font-cormorant font-medium text-[#b08a50] text-[clamp(1rem,4.6vw,1.15rem)] tracking-[0.24em] [text-indent:0.24em] whitespace-nowrap">
+                        <h3 class="font-cormorant font-medium text-tinta text-[clamp(1rem,4.6vw,1.15rem)] tracking-[0.24em] [text-indent:0.24em] whitespace-nowrap">
                             {dato.rotulo}
                         </h3>
                         <span class="fecha-raya" aria-hidden="true"></span>
                         <div class="mt-2">
                             {dato.destacado && (
-                                <p class="font-cormorant text-vino text-[clamp(2.5rem,11.5vw,3rem)] leading-[1.05]">
+                                <p class="font-cormorant text-oro-hondo text-[clamp(2.5rem,11.5vw,3rem)] leading-[1.05]">
                                     {dato.destacado}
                                 </p>
                             )}

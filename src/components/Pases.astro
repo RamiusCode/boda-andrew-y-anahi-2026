@@ -30,7 +30,7 @@ const titulo = "PASES RESERVADOS";
                 id="franja-pases"
                 class="franja relative w-full py-8 px-7 overflow-hidden"
             >
-                <div class="franja-fondo absolute inset-0 bg-vino">
+                <div class="franja-fondo absolute inset-0">
                     <span class="franja-filete arriba" />
                     <span class="franja-filete abajo" />
                 </div>
@@ -51,12 +51,12 @@ const titulo = "PASES RESERVADOS";
                         <circle class="trazo" cx="50" cy="50" r="47" pathLength="1" />
                         <circle class="interior" cx="50" cy="50" r="41" />
                     </svg>
-                    <span id="pases-numero" class="pases-numero font-cormorant font-medium text-vino">
+                    <span id="pases-numero" class="pases-numero font-cormorant font-medium text-oro-hondo">
                         {pases}
                     </span>
                 </div>
 
-                <p class="pases-texto font-cormorant font-semibold text-[#b08a50] text-[clamp(1.05rem,4.8vw,1.2rem)] tracking-[0.3em] [text-indent:0.3em] uppercase mt-5">
+                <p class="pases-texto font-cormorant font-semibold text-tinta text-[clamp(1.05rem,4.8vw,1.2rem)] tracking-[0.3em] [text-indent:0.3em] uppercase mt-5">
                     {texto.rotulo}
                 </p>
 

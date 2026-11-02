@@ -24,7 +24,7 @@ const momentos = [
     id="franja-cronograma"
     class="franja relative w-full py-9 px-7 overflow-hidden"
 >
-    <div class="franja-fondo absolute inset-0 bg-vino">
+    <div class="franja-fondo absolute inset-0">
         <span class="franja-filete arriba"></span>
         <span class="franja-filete abajo"></span>
     </div>
@@ -39,7 +39,7 @@ const momentos = [
 <section class="relative isolate overflow-hidden w-full px-6 pt-14 pb-28">
     <div id="linea-tiempo" class="relative max-w-[330px] mx-auto">
         <!-- Línea central: sólida y en vino, como en el diseño -->
-        <div class="linea-central absolute left-1/2 top-3 bottom-3 w-px -translate-x-1/2 bg-vino"></div>
+        <div class="linea-central absolute left-1/2 top-3 bottom-3 w-px -translate-x-1/2 bg-oro-vivo"></div>
 
         {
             momentos.map((momento, i) => (
@@ -58,13 +58,13 @@ const momentos = [
                        icono (la mitad de sus 40px).
                     */}
                     <span
-                        class={`momento-marca absolute top-[20px] h-px w-[14px] bg-vino ${
+                        class={`momento-marca absolute top-[20px] h-px w-[14px] bg-oro-vivo ${
                             i % 2 === 0 ? "left-1/2" : "right-1/2"
                         }`}
                     />
 
                     {/* Punto sobre la línea central, en el arranque del tramo */}
-                    <span class="momento-marca absolute left-1/2 top-[20px] -translate-x-1/2 -translate-y-1/2 w-[4px] h-[4px] rounded-full bg-vino" />
+                    <span class="momento-marca absolute left-1/2 top-[20px] -translate-x-1/2 -translate-y-1/2 w-[4px] h-[4px] rounded-full bg-oro-vivo" />
 
                     <div
                         class={`momento-contenido flex flex-col items-center text-center ${
@@ -76,7 +76,7 @@ const momentos = [
                             style={`--ic: url('/imagenes/${momento.icono}')`}
                             aria-hidden="true"
                         />
-                        <h3 class="font-callingstone text-vino text-[clamp(0.57rem,2.8vw,0.75rem)] tracking-[0.1em] leading-[1.7] mt-2">
+                        <h3 class="font-callingstone text-oro-hondo text-[clamp(0.57rem,2.8vw,0.75rem)] tracking-[0.1em] leading-[1.7] mt-2">
                             {momento.nombre.map((linea) => (
                                 <span class="momento-nombre block whitespace-nowrap">
                                     {linea}

@@ -11,12 +11,12 @@ const bendicion = ["Con la bendición de Dios", "y de nuestros padres :"];
 
 const padres = [
     {
-        titulo: "PADRES DE LA NOVIA",
-        nombres: ["Serapio Cruz Ventura", "Salome Turpo Quispe"],
-    },
-    {
         titulo: "PADRES DEL NOVIO",
         nombres: ["David Condori Cóndori", "Elizabeth Yujra de Cóndori"],
+    },
+    {
+        titulo: "PADRES DE LA NOVIA",
+        nombres: ["Serapio Cruz Ventura", "Salome Turpo Quispe"],
     },
 ];
 // ──────────────────────────────────────────────────────────────
@@ -28,7 +28,7 @@ const padres = [
     <div class="relative isolate w-full max-w-[340px]">
     <div
         id="arco-padres"
-        class="arco-luz arco-oro relative overflow-hidden w-full max-w-[340px] bg-vino rounded-t-full shadow-[0_18px_40px_rgba(70,48,18,0.28)] flex flex-col items-center text-center px-7 pt-16 pb-12"
+        class="arco-luz arco-oro superficie-oro relative overflow-hidden w-full max-w-[340px] rounded-t-full flex flex-col items-center text-center px-7 pt-16 pb-12"
     >
         <!-- Destello que cruza el arco al entrar -->
         <div class="padres-destello" aria-hidden="true"></div>
@@ -98,10 +98,10 @@ const padres = [
 
 <style>
     .padres-sombra {
-        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+        text-shadow: 0 1px 0 rgba(255, 238, 180, 0.55);
     }
 
-    /* Corazón dorado entre los padres de la novia y los del novio */
+    /* Corazón dorado entre los padres del novio y los de la novia */
     .padres-separador {
         display: flex;
         align-items: center;
@@ -112,7 +112,7 @@ const padres = [
     .padres-separador span {
         width: 44px;
         height: 1px;
-        background: linear-gradient(90deg, transparent, #d9bd85);
+        background: linear-gradient(90deg, transparent, var(--color-oro-vivo));
     }
     .padres-separador span:last-child {
         transform: scaleX(-1);
@@ -120,7 +120,7 @@ const padres = [
     .padres-separador svg {
         width: 13px;
         height: 13px;
-        fill: #d9bd85;
+        fill: var(--color-oro-vivo);
     }
 
     .padres-destello {

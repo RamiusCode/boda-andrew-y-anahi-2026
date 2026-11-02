@@ -3,11 +3,11 @@
 // Banda vino con el versículo bíblico.
 // ── DATOS EDITABLES ───────────────────────────────────────────
 const versiculo = [
-    "ASÍ QUE NO SON YA MÁS DOS, SINO UNA SOLA",
-    "CARNE; POR TANTO, LO QUE DIOS HA UNIDO,",
-    "NO LO SEPARE EL HOMBRE.",
+    "TRES COSAS DURARÁN PARA SIEMPRE:",
+    "LA FE, LA ESPERANZA Y EL AMOR.",
+    "PERO LA MAYOR DE TODAS ES EL AMOR.",
 ];
-const cita = "Mateo 19:6";
+const cita = "1 Corintios 13:13";
 // ──────────────────────────────────────────────────────────────
 ---
 
@@ -16,13 +16,13 @@ const cita = "Mateo 19:6";
     class="franja relative w-full py-10 px-4 overflow-hidden"
 >
     <!-- Los filetes van dentro del fondo para entrar junto con la banda -->
-    <div class="franja-fondo absolute inset-0 bg-vino">
+    <div class="franja-fondo absolute inset-0">
         <span class="franja-filete arriba"></span>
         <span class="franja-filete abajo"></span>
     </div>
 
     <p
-        class="franja-texto relative font-callingstone text-crema text-center text-[clamp(0.6rem,3.05vw,0.83rem)] tracking-[0.05em] leading-[2.4]"
+        class="franja-texto relative font-callingstone text-tinta text-center text-[clamp(0.6rem,3.05vw,0.83rem)] tracking-[0.05em] leading-[2.4]"
     >
         {versiculo.map((linea) => <span class="block whitespace-nowrap">{linea}</span>)}
     </p>

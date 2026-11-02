@@ -92,9 +92,9 @@ const bordeSello =
             <stop offset="1" stop-color="#fff" stop-opacity="0" />
         </radialGradient>
 
-        <!-- Forro: oro viejo con un enrejado dorado fino -->
+        <!-- Forro: oro suave con un enrejado dorado fino -->
         <pattern id="sb-forro" width="9" height="9" patternUnits="userSpaceOnUse">
-            <rect width="9" height="9" fill="#8b6a33" />
+            <rect width="9" height="9" fill="#c4a368" />
             <path
                 d="M4.5 0.6 L8.4 4.5 L4.5 8.4 L0.6 4.5Z"
                 fill="none"
@@ -158,7 +158,7 @@ const bordeSello =
                 letras: esa cursiva no los tolera. Su "&" es propio y se
                 lee bien, no hace falta traerlo de otra fuente. */}
             <h1
-                class="nombres-portada font-great-vibes text-vino text-[clamp(2.3rem,11vw,2.95rem)] leading-[1.25] mt-1 whitespace-nowrap"
+                class="nombres-portada font-great-vibes text-oro-hondo text-[clamp(2.3rem,11vw,2.95rem)] leading-[1.25] mt-1 whitespace-nowrap"
             >
                 {nombre1}<span class="mx-[0.28em]">&amp;</span>{nombre2}
             </h1>
@@ -217,7 +217,7 @@ const bordeSello =
                                 <div class="tarjeta-adorno" aria-hidden="true">
                                     <span></span><i></i><span></span>
                                 </div>
-                                <p class="font-great-vibes text-vino text-[1.45rem] leading-[1.3] whitespace-nowrap">
+                                <p class="font-great-vibes text-oro-hondo text-[1.45rem] leading-[1.3] whitespace-nowrap">
                                     {nombre1} &amp; {nombre2}
                                 </p>
                                 <p class="font-cormorant text-marron text-[0.6rem] tracking-[0.32em] mt-1">
@@ -386,12 +386,6 @@ const bordeSello =
         justify-content: center;
         padding: 0 1.5rem;
         background-image:
-            radial-gradient(
-                120% 75% at 50% 45%,
-                rgba(255, 255, 255, 0.85) 0%,
-                rgba(247, 241, 233, 0) 60%,
-                rgba(139, 106, 51, 0.08) 100%
-            ),
             url("/imagenes/fondoprincipal.webp"),
             linear-gradient(#faf3e4, #faf3e4);
         background-size: cover;
@@ -672,8 +666,8 @@ const bordeSello =
     }
     .sello-mono {
         display: block;
-        width: 32px;
-        height: 25px;
+        width: 46px;
+        height: 34px;
         background-color: #5c421b;
         -webkit-mask: var(--mono) center / contain no-repeat;
         mask: var(--mono) center / contain no-repeat;

@@ -44,7 +44,7 @@ const VUELTA = 2 * Math.PI * 47;
                 id={`franja-${c.id}`}
                 class="franja franja-ceremonia relative w-full py-8 px-7 overflow-hidden"
             >
-                <div class="franja-fondo absolute inset-0 bg-vino">
+                <div class="franja-fondo absolute inset-0">
                     <span class="franja-filete arriba" />
                     <span class="franja-filete abajo" />
                 </div>
@@ -80,20 +80,20 @@ const VUELTA = 2 * Math.PI * 47;
                         <span /><i /><span />
                     </div>
 
-                    <p class="ceremonia-texto font-cormorant font-semibold text-marron text-[clamp(1.35rem,6.2vw,1.55rem)] leading-[1.35] mt-4">
+                    <p class="ceremonia-texto font-cormorant font-semibold text-oro-hondo text-[clamp(1.35rem,6.2vw,1.55rem)] leading-[1.35] mt-4">
                         {c.lugar.map((linea) => (
                             <span class="block whitespace-nowrap">{linea}</span>
                         ))}
                     </p>
 
-                    <p class="ceremonia-texto font-cormorant font-medium italic text-marron text-[clamp(1.3rem,6vw,1.48rem)] leading-[1.4] mt-2">
+                    <p class="ceremonia-texto font-cormorant font-medium italic text-tinta text-[clamp(1.3rem,6vw,1.48rem)] leading-[1.4] mt-2">
                         {c.direccion.map((linea) => (
                             <span class="block whitespace-nowrap">{linea}</span>
                         ))}
                     </p>
 
                     <div class="ceremonia-texto mt-6">
-                        <a href={c.mapa} target="_blank" rel="noopener" class="boton-fino">
+                        <a href={c.mapa} target="_blank" rel="noopener" class="boton-fino boton-oro">
                             <svg viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                             </svg>
@@ -126,13 +126,13 @@ const VUELTA = 2 * Math.PI * 47;
     }
     .ceremonia-anillo .pista {
         fill: none;
-        stroke: rgba(199, 164, 103, 0.25);
+        stroke: rgba(239, 191, 4, 0.25);
         stroke-width: 1;
     }
     /* El trazo arranca arriba (las 12) y se dibuja en sentido horario */
     .ceremonia-anillo .trazo {
         fill: none;
-        stroke: #c7a467;
+        stroke: var(--color-oro-vivo);
         stroke-width: 1.4;
         stroke-linecap: round;
         transform: rotate(-90deg);
@@ -140,13 +140,31 @@ const VUELTA = 2 * Math.PI * 47;
     }
     .ceremonia-anillo .interior {
         fill: none;
-        stroke: rgba(199, 164, 103, 0.35);
+        stroke: rgba(239, 191, 4, 0.4);
         stroke-width: 0.6;
     }
     .ceremonia-icono {
         position: absolute;
         inset: 24px;
-        background-color: var(--color-vino);
+        background-color: var(--color-oro-hondo);
+    }
+
+    /* Botón en dorado: letra y borde oro, y al tocarlo se llena de oro */
+    .boton-oro {
+        color: var(--color-oro-hondo);
+        border-color: var(--color-oro-vivo);
+        outline-color: rgba(239, 191, 4, 0.45);
+    }
+    .boton-oro::before {
+        background: var(--color-oro-vivo);
+    }
+    .boton-oro:active {
+        color: var(--color-tinta);
+    }
+    @media (hover: hover) {
+        .boton-oro:hover {
+            color: var(--color-tinta);
+        }
     }
 
 </style>

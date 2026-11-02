@@ -1,8 +1,8 @@
 ---
 // src/components/Ramo.astro
-// Ramo de flores (camelias marfil y champaña con hojas salvia) para
+// Ramo de flores (rosas blancas y doradas con hojas de oro) para
 // las esquinas de la invitación. Es /imagenes/flores.webp, sacada de
-// originales/flores.png recortada a su contenido y comprimida.
+// originales/flores.png recortada y comprimida.
 //
 // Está compuesto para la esquina inferior izquierda; para las otras
 // esquinas se espeja con `espejo` (y se gira desde afuera si va arriba).
@@ -22,7 +22,7 @@ const { espejo = false, class: clase = "" } = Astro.props;
     src="/imagenes/flores.webp"
     alt=""
     width="700"
-    height="777"
+    height="733"
     loading="lazy"
     decoding="async"
     class={clase}
