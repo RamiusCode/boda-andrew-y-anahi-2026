@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  // Dirección pública: WhatsApp necesita las rutas completas de og:image
+  site: 'https://boda-andrew-y-anahi-2026.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   }
